@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap');
+
+:root{
+    --fundoBody: #FFF7F0;
+    --fundoMain: #FFFFFF;
+    --principal: #ff5848;
+    --principalClaro: #FF7B6E;
+    --principalHover: #f9d003;
+    --destaque: #FFD166;
+    --destaqueClaro: #FFE8B6;
+    --realce: #FF9F1C;
+    --realceHover: #FFBF69;
+    --textoPrincipal: black;
+    --textoSecundario: #6C757D;
+    --borda: #E2A47B;
+    --sombra: rgba(0, 0, 0, 0.377);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Indie Flower';
+}
+
+body, main, .titulo, .container, footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--fundoBody);
+}
+
+main{
+    background-color: var(--fundoMain);
+    width: 70rem;
+    height: 35rem;
+    border-radius: 3rem;
+    box-shadow: 2px 10px 20px var(--sombra);
+    margin-bottom: 4rem;
+}
+
+.titulo{
+    background: linear-gradient(150deg, var(--principal), var(--realce));
+    height: 35rem;
+    width: 35rem;
+    border-radius: 2rem;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 3px 5px 4px var(--sombra);
+}
+
+.titulo h1{
+    text-align: center;
+    padding: 1rem;
+}
+
+.container{
+    height: 40rem;
+    width: 35rem;
+    flex-direction: column;
+}
+
+label{
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--textoPrincipal);
+}
+
+input{
+    border-radius: 2rem;
+    border: 4px solid var(--borda);
+    width: 25rem;
+    height: 2.5rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:hover{
+    background-color: var(--destaqueClaro);
+    border: 4px solid var(--realce);
+}
+
+input:focus{
+    outline: none;
+    border: 4px solid var(--principal);
+    background-color: white;
+}
+
+button{
+    margin-top: 3rem;
+    border-radius: 2rem;
+    border: none;
+    width: 7rem;
+    height: 3rem;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--principalClaro);
+    color: var(--textoPrincipal);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    background-color: var(--realce);
+    color: white;
+    transform: scale(1.05);
+}
+
+footer{
+    background-color: var(--principalClaro);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+}
+
+a{
+    text-decoration: none;
+    color: var(--textoPrincipal);
+}

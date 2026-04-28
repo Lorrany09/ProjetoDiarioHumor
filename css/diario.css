@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Indie+Flower&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap');
+
+:root{
+    --fundoBody: #FFF7F0;
+    --fundoMain: #FFFFFF;
+    --principal: #ff5848;
+    --principalClaro: #FF7B6E;
+    --principalHover: #f9d003;
+    --destaque: #FFD166;
+    --destaqueClaro: #FFE8B6;
+    --realce: #FF9F1C;
+    --realceHover: #FFBF69;
+    --textoPrincipal: black;
+    --textoSecundario: #6C757D;
+    --borda: #E2A47B;
+    --sombra: rgba(0, 0, 0, 0.377);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Indie Flower';
+}
