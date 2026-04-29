@@ -73,15 +73,3 @@ function fazerEmojis() {
         tabela.appendChild(botao);
     });
 }
-
-function entrarPagina(){
-    const nome = document.getElementById('nome').value;
-
-    if(nome === "") {
-        alert("Digite seu nome!");
-        return;
-    }
-    
-    localStorage.setItem('nomeAtual', nome);
-    window.location.href = "pages/diario.html";
-}

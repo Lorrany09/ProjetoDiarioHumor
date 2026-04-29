@@ -14,6 +14,7 @@
     --textoSecundario: #6C757D;
     --borda: #E2A47B;
     --sombra: rgba(0, 0, 0, 0.377);
+    --erro: red;
 }
 
 *{
@@ -63,10 +64,10 @@ main{
     height: 40rem;
     width: 35rem;
     flex-direction: column;
+    gap: 1rem;
 }
 
 label{
-    margin-bottom: 2rem;
     font-size: 2rem;
     font-weight: bolder;
     color: var(--textoPrincipal);
@@ -85,6 +86,30 @@ input{
 input:hover{
     background-color: var(--destaqueClaro);
     border: 4px solid var(--realce);
+}
+
+.erro{
+    border-radius: 2rem;
+    border: 4px solid var(--erro);
+    background-color: rgba(255, 0, 0, 0.092);
+    width: 25rem;
+    height: 2.5rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.erro:hover{
+    border: 4px solid var(--erro);
+}
+
+#mensagemErro{
+    color: var(--erro);
+    font-weight: bold;
+    font-size: 0.9rem;
+    min-height: 1.5rem;
+    width: 25rem;
+    padding-left: 1rem;
 }
 
 input:focus{
@@ -124,4 +149,72 @@ footer{
 a{
     text-decoration: none;
     color: var(--textoPrincipal);
+}
+
+@media screen and (max-width: 1200px){
+    main{
+        width: 80%;
+    }
+    .titulo{
+        width: 50%;
+    }
+    h1{
+        width: 70%;
+    }
+    .container{
+        width: 50%;
+    }
+    input, .erro{
+        width: 70%;
+    }
+    #mensagemErro{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 900px){
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    .container{
+        height: 100%;
+    }
+    .titulo{
+        width: 100%;
+        height: 50%;
+    }
+    h1{
+        width: 100%;
+    }
+    input, .erro{
+        width: 60%;
+    }
+    
+    #mensagemErro{
+        width: 80%;
+        max-width: 25rem;
+    }
+}
+
+@media screen and (max-width: 700px){
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    .container{
+        height: 100%;
+    }
+    .titulo{
+        display: none;
+    }
+    input, .erro{
+        width: 60%;
+    }
+    
+    #mensagemErro{
+        width: 100%;
+    }
 }
