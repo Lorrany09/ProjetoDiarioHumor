@@ -204,8 +204,17 @@ a{
     color: var(--textoPrincipal);
 }
 
+.conteudo{
+    margin: 10px;
+    font-size: 24px;
+}
+
+.cabecalho{
+    display: flex;
+}
+
 .mensagem .emoji{
-    width: 35px;
+    width: 2rem;
 }
 
 .mensagem{
@@ -213,9 +222,19 @@ a{
     gap: 10px;
 }
 
-.entrada{
-    margin: 10px;
-    font-size: 24px;
+.mensagem p {
+    max-width: 90%;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.lixeira{
+    position: relative; 
+    bottom: 1px;
+    left: 18px;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
 }
 
 .erroMensagem{
