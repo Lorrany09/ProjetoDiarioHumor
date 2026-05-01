@@ -16,3 +16,7 @@ function entrarPagina(){
     localStorage.setItem('nomeAtual', nome);
     window.location.href = "pages/diario.html";
 }
+
+function sairPagina(){
+    window.location.href = "/index.html";
+}

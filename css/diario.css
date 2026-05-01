@@ -22,3 +22,225 @@
     box-sizing: border-box;
     font-family: 'Indie Flower';
 }
+
+main, body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+body{
+    background-color: var(--fundoBody);
+    min-height: 100vh;
+}
+
+main{
+    background-color: var(--fundoMain);
+    width: 70rem;
+    min-height: 35rem;
+    border-radius: 3rem;
+    box-shadow: 2px 10px 20px var(--sombra);
+    margin-bottom: 6rem;
+    position: relative;
+    top: 3rem;
+    padding: 2rem;
+}
+
+#boasVindas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(var(--principal), var(--realce));
+    border-radius: 2rem;
+    min-width: 15rem;
+    height: 4rem;
+    padding: 2rem;
+}
+
+#subtitulo{
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+textarea{
+    width: 60rem;
+    min-height: 8rem;
+    border-radius: 20px;
+    background-color: var(--destaqueClaro);
+    border: none;
+    text-align: justify;
+    padding: 8px;
+    padding-bottom: 6rem;
+    resize: none;
+    font-size: 20px;
+}
+
+textarea:hover{
+    background-color: var(--realceHover);
+}
+
+textarea:focus{
+    outline: none;
+}
+
+#historico, #historicoHumor{
+    width: 60rem;
+    min-height: 5rem;
+    border-radius: 20px;
+    background-color: var(--destaqueClaro);
+    padding: 8px;
+    padding-bottom: 6rem;
+}
+
+#salvarHumor{
+    border-radius: 2rem;
+    border: none;
+    width: 7rem;
+    height: 3rem;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--principalClaro);
+    color: var(--textoPrincipal);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#salvarHumor:hover{
+    background-color: var(--realce);
+    color: white;
+    transform: scale(1.05);
+}
+
+#emojis{
+    background-color: var(--principal);
+    border-radius: 100px;
+    padding: 1.5rem;
+    min-width: 49rem;
+    height: 11rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.botao{
+    width: 6rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 0;
+}
+
+.botao:hover{
+    transform: scale(1.20);
+}
+
+.selecionado{
+    width: 7rem;
+    line-height: 0;
+    border-radius: 50%;
+    border: 10px solid var(--realce);
+}
+
+.selecionado:hover{
+    transition: none;
+    transform: none;
+}
+
+header{
+    background-color: var(--principal);
+    height: 5rem;
+    width: 100%;
+    margin-bottom: auto;
+    display: flex;
+    align-items: center;
+}
+
+h1{
+    padding: 1rem;
+    font-size: 2.5rem;
+}
+
+#voltar{
+    border-radius: 2rem;
+    border: none;
+    width: 7rem;
+    height: 3rem;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--principalClaro);
+    color: var(--textoPrincipal);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    left: 65rem;
+}
+
+#voltar:hover{
+    background-color: var(--realce);
+    color: white;
+    transform: scale(1.05);
+}
+
+footer{
+    background-color: var(--principalClaro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    width: 100%;
+    margin-top: auto;
+}
+
+a{
+    text-decoration: none;
+    color: var(--textoPrincipal);
+}
+
+.mensagem .emoji{
+    width: 35px;
+}
+
+.mensagem{
+    display: flex;
+    gap: 10px;
+}
+
+.entrada{
+    margin: 10px;
+    font-size: 24px;
+}
+
+.erroMensagem{
+    margin: 10px;
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.138);
+    border-radius: 2rem;
+    width: 12rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+hr{
+    background-color: black;
+    height: 3px;
+    border-color: black;
+}
+
+label{
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.historico{
+    margin-top: 20px;
+}

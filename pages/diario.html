@@ -7,21 +7,40 @@
     <title>Diário do Humor</title>
 </head>
 <body>
+    <header>
+        <h1>Diário do Humor</h1>
+        <button id="voltar" onclick="sairPagina()">Voltar</button>
+    </header>
     <main>
-        <h1>Seja bem-vindo(a) <span id="nomeUsuario"></span>!</h1>
+        <h2 id="boasVindas"></h2>
         
-        <h2>Como você está hoje?</h2>
+        <h2 id="subtitulo">Como você está hoje?</h2>
         
         <div id="emojis"></div>
+        <div id="erro"></div>
         
-        <label>Motivo:</label>
-        <textarea id="motivo" placeholder="Descreva como foi seu dia"></textarea>
+        <div class="input">
+            <label for="motivo">Motivo:</label>
+            <textarea name="input" id="motivo"></textarea>
+        </div>
+        <button id="salvarHumor" onclick="salvarHumor()">Salvar</button>
         
-        <button id="salvarHumor">Salvar</button>
-        
-        <h2>Histórico da Semana:</h2>
-        <div id="historico"></div>
+        <div class="historico">
+            <h2>Histórico da Semana:</h2>
+            <div id="historico"></div>
+        </div>
+
+        <div class="historico">
+            <h2>Humor da Semana:</h2>
+            <div id="historicoHumor"></div>
+        </div>
     </main>
-    <script src="/pages/diario.html"></script>
+    <footer>
+        <p>Todos os direitos reservados para <a href="https://github.com/Lorrany09">@Lorrany</a></p>
+    </footer>
+
+    <script src="/js/fazerEmoji.js"></script>
+    <script src="/js/salvarMensagem.js"></script>
+    <script src="/js/verificações.js"></script>
 </body>
 </html>
