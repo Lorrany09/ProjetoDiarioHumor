@@ -151,7 +151,7 @@ a{
     color: var(--textoPrincipal);
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1150px){
     main{
         width: 80%;
     }
@@ -172,7 +172,7 @@ a{
     }
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 768px){
     main{
         display: flex;
         flex-direction: column;
@@ -189,32 +189,36 @@ a{
         width: 100%;
     }
     input, .erro{
-        width: 60%;
+        width: 100%;
     }
-    
     #mensagemErro{
-        width: 80%;
+        width: 90%;
         max-width: 25rem;
     }
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 480px){
     main{
         display: flex;
         flex-direction: column;
-        width: 80%;
+        width: 90%;
     }
     .container{
         height: 100%;
     }
     .titulo{
-        display: none;
+        height: 30%;
+    }
+    h1{
+        font-size: 130%;
+    }
+    label{
+        width: 120%;
     }
     input, .erro{
-        width: 60%;
+        width: 120%;
     }
-    
     #mensagemErro{
-        width: 100%;
+        width: 120%;
     }
 }

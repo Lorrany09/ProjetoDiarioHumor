@@ -33,6 +33,7 @@ main, body{
 body{
     background-color: var(--fundoBody);
     min-height: 100vh;
+    width: 100%;
 }
 
 main{
@@ -68,17 +69,18 @@ main{
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    width: 60rem;
 }
 
 textarea{
-    width: 60rem;
+    max-width: 60rem;
+    width: 100%;
     min-height: 8rem;
     border-radius: 20px;
     background-color: var(--destaqueClaro);
     border: none;
     text-align: justify;
     padding: 8px;
-    padding-bottom: 6rem;
     resize: none;
     font-size: 20px;
 }
@@ -120,9 +122,9 @@ textarea:focus{
 
 #emojis{
     background-color: var(--principal);
-    border-radius: 100px;
+    border-radius: 10rem;
     padding: 1.5rem;
-    min-width: 49rem;
+    width: 49rem;
     height: 11rem;
     display: flex;
     align-items: center;
@@ -160,6 +162,7 @@ header{
     margin-bottom: auto;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 h1{
@@ -178,8 +181,8 @@ h1{
     color: var(--textoPrincipal);
     cursor: pointer;
     transition: all 0.3s ease;
-    position: relative;
-    left: 65rem;
+    position: absolute;
+    left: 90%;
 }
 
 #voltar:hover{
@@ -273,6 +276,7 @@ label{
     border-radius: 20px;
     background-color: var(--destaqueClaro);
     padding: 8px;
+    flex-wrap: wrap; 
 }
 
 .div{
@@ -293,4 +297,226 @@ label{
 
 .cabecalhoHistorico svg{
     cursor: pointer;
+}
+
+@media screen and (max-width: 1150px){
+    main{
+        width: 90%;
+        padding: 1.5rem;
+    }
+    #voltar{
+        left: auto;
+        right: 5%;
+    }
+    h1{
+        font-size: 2rem;
+        width: 70%;
+    }
+    #emojis{
+        width: 80%;
+        border-radius: 6rem;
+    }
+    .botao{
+        width: 6rem;
+    }
+    .selecionado{
+        width: 7.5rem;
+        border-width: 6px;
+    }
+    .input{
+        width: 100%;
+    }
+    textarea{
+        font-size: 18px;
+        width: 100%;
+    }
+    #historicoHumor{
+        gap: 0.8rem;
+        width: 100%;
+    }
+    #historico{
+        width: 100%;
+    }
+    .div{
+        width: 4.5rem;
+        height: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .div p{
+        font-size: 1.5rem;
+    }
+    .historico{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    main{
+        width: 95%;
+        top: 2rem;
+        padding: 1.2rem;
+    }
+    #boasVindas{
+        font-size: 1.2rem;
+        min-width: 12rem;
+        height: 3.5rem;
+    }
+    #subtitulo{
+        font-size: 1.8rem;
+        padding: 1.5rem;
+    }
+    #emojis{
+        gap: 15px;
+        height: 10rem;
+    }
+    .botao{
+        width: 5.5rem;
+    }
+    .selecionado{
+        width: 7.5rem;
+        border-width: 6px;
+    }
+    label{
+        font-size: 22px;
+    }
+    textarea{
+        font-size: 18px;
+        min-height: 7rem;
+    }
+    #salvarHumor{
+        width: 6rem;
+        height: 2.8rem;
+        font-size: 18px;
+    }
+    .conteudo{
+        font-size: 20px;
+    }
+    .cabecalho p{
+        font-size: 0.9rem;
+    }
+    #historicoHumor{
+        gap: 0.8rem;
+        width: 100%;
+    }
+    #historico{
+        width: 100%;
+    }
+    .div{
+        width: 4.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .div p{
+        font-size: 1.5rem;
+    }
+    .historico{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    header{
+        height: auto;
+        min-height: 4rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0.5rem;
+    }
+    h1{
+        font-size: 1.5rem;
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem;
+    }
+    #voltar{
+        position: static;
+        width: 6rem;
+        height: 2.5rem;
+        font-size: 16px;
+        margin-bottom: 0.5rem;
+    }
+    main{
+        width: 95%;
+        top: 1rem;
+        margin-bottom: 4rem;
+        padding: 1rem;
+        border-radius: 2rem;
+    }
+    #boasVindas{
+        font-size: 1rem;
+        min-width: 10rem;
+        height: 3rem;
+        padding: 1rem;
+    }
+    #subtitulo{
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+    #emojis{
+        border-radius: 10rem;
+        gap: 10px;
+        height: 50%;
+        width: 100%;
+    }
+    .botao{
+        width: 5.5rem;
+    }
+    .selecionado{
+        width: 7rem;
+        border-width: 4px;
+    }
+    .input{
+        padding: 0.5rem;
+    }
+    label{
+        font-size: 20px;
+    }
+    textarea{
+        font-size: 16px;
+        min-height: 6rem;
+    }
+    #salvarHumor{
+        width: 5.5rem;
+        height: 2.5rem;
+        font-size: 16px;
+    }
+    .historico h2{
+        font-size: 1.3rem;
+    }
+    .conteudo{
+        font-size: 18px;
+        margin: 8px;
+    }
+    .mensagem{
+        gap: 8px;
+    }
+    .mensagem .emoji{
+        width: 1.5rem;
+    }
+    .lixeira{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .cabecalho p{
+        font-size: 0.8rem;
+    }
+    #historicoHumor{
+        gap: 0.5rem;
+    }
+    .div{
+        width: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .div p{
+        font-size: 1.2rem;
+    }
+    footer{
+        height: 3.5rem;
+        font-size: 0.8rem;
+    }
 }
