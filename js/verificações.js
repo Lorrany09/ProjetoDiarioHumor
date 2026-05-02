@@ -15,11 +15,11 @@ function entrarPagina(){
     }
     sessionStorage.setItem('usuarioLogado', nomeSemEspaco);
     sessionStorage.setItem('nomeLogado', nome);
-    window.location.href = "pages/diario.html";
+    window.location.href = "diario.html";
 }
 
 function sairPagina(){
-    window.location.href = "/index.html";
+    window.location.href = "index.html";
 }
 
 function getChaveUsuario() {
