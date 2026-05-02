@@ -91,13 +91,12 @@ textarea:focus{
     outline: none;
 }
 
-#historico, #historicoHumor{
+#historico{
     width: 60rem;
     min-height: 5rem;
     border-radius: 20px;
     background-color: var(--destaqueClaro);
     padding: 8px;
-    padding-bottom: 6rem;
 }
 
 #salvarHumor{
@@ -262,4 +261,32 @@ label{
 
 .historico{
     margin-top: 20px;
+}
+
+#historicoHumor{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 60rem;
+    min-height: 5rem;
+    border-radius: 20px;
+    background-color: var(--destaqueClaro);
+    padding: 8px;
+}
+
+.div{
+    display: flex;
+    background-color: var(--principal);
+    border-radius: 2rem;
+    width: 5rem;
+    justify-content: center;
+    gap: 5px;
+}
+
+.div p{
+    font-size: 2rem;
+}
+.div svg{
+    width: 2rem;
 }

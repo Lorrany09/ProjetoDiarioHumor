@@ -1,8 +1,8 @@
 const emoji = [
     { //chorando
         nome: "Chorando",
-        svg: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 473.931 473.931" xml:space="preserve" fill="currentColor">
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle style="fill:#FFC10E;" cx="236.966" cy="236.966" r="236.966"></circle> <g> <path style="fill:#75CDDE;" d="M366.532,278.29c-13.205,0-25.736-7.817-31.113-20.771c-11.113-26.765-24.928-49.754-39.951-66.484 c-12.426-13.837-11.285-35.131,2.552-47.558c13.837-12.426,35.128-11.289,47.554,2.556c20.336,22.645,37.848,51.464,52.044,85.66 c7.132,17.178-1.01,36.883-18.189,44.014C375.209,277.459,370.835,278.29,366.532,278.29z"></path> <path style="fill:#75CDDE;" d="M113.465,278.29c-4.303,0-8.677-0.831-12.902-2.582c-17.178-7.128-25.32-26.836-18.189-44.014 c14.196-34.196,31.708-63.015,52.044-85.66c12.426-13.833,33.717-14.982,47.554-2.556c13.837,12.426,14.978,33.721,2.552,47.558 c-15.023,16.729-28.838,39.715-39.951,66.484C139.201,270.473,126.666,278.29,113.465,278.29z"></path> </g> <g> <circle style="fill:#333333;" cx="164.937" cy="155.227" r="37.216"></circle> <circle style="fill:#333333;" cx="305.664" cy="155.227" r="37.216"></circle> <path style="fill:#333333;" d="M296.381,302.024c0,43.805-26.57,79.344-59.356,79.344s-59.356-35.539-59.356-79.344 c0-43.827,26.57-79.348,59.356-79.348S296.381,258.196,296.381,302.024z"></path> </g> </g>
+        svg: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 473.935 473.935" xml:space="preserve" fill="#000000">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle style="fill:#FFC10E;" cx="236.967" cy="236.967" r="236.967"></circle> <path style="fill:#333333;" d="M357.644,355.144c-66.005-68.621-174.861-68.763-241.065-0.341 c-8.389,8.666,4.827,21.912,13.227,13.227c59.266-61.249,155.52-61.088,214.61,0.341 C352.794,377.086,366.007,363.84,357.644,355.144L357.644,355.144z"></path> <g> <path style="fill:#75CDDE;" d="M116.893,124.849c-19.588,20.954-35.974,44.827-48.913,70.387 c-13.818,27.296-7.42,60.647,20.135,76.793c25.182,14.75,62.986,7.139,76.793-20.138c5.051-9.976,10.529-19.652,16.587-29.055 c2.848-4.415,5.934-8.666,9.066-12.879c-9.658,12.995,3.173-3.027,5.702-5.732c20.879-22.331,22.17-57.208,0-79.375 C175.187,103.767,137.784,102.495,116.893,124.849L116.893,124.849z"></path> <path style="fill:#75CDDE;" d="M414.987,216.279c-13.643-32.157-31.708-61.126-54.776-87.427c-20.183-23.016-58.81-20.565-79.375,0 c-22.683,22.683-20.153,56.396,0,79.375c1.998,2.226,3.944,4.501,5.841,6.818c-4.026-5.369-4.135-5.474-0.333-0.318 c3.817,5.212,7.252,10.69,10.638,16.183c8.239,13.351,14.96,27.603,21.074,42.028c11.959,28.187,52.961,34.091,76.793,20.135 C423.724,276.155,426.931,244.444,414.987,216.279L414.987,216.279z"></path> </g> <g> <circle style="fill:#333333;" cx="164.938" cy="155.232" r="37.216"></circle> <circle style="fill:#333333;" cx="305.667" cy="155.232" r="37.216"></circle> </g> </g>
         </svg>`
     },
     { //triste
@@ -98,5 +98,29 @@ function escreverNome(){
     }
 }
 
+function historicoEmojis(){
+    const tabela = document.getElementById("historicoHumor");
+    const entradas = JSON.parse(localStorage.getItem('entradasDiario')) || [];
+    const contagem = {};
+    
+    entradas.forEach(entrada => {
+        const emoji = entrada.emoji;
+        if(contagem[emoji]) {
+            contagem[emoji]++;
+        } else {
+            contagem[emoji] = 1;
+        }
+    });
+    
+    tabela.innerHTML = '';
+    for(let emoji in contagem) {
+        const div = document.createElement("div");
+        div.innerHTML = `${emoji} <p>${contagem[emoji]}x</p>`;
+        div.classList.add("div");
+        tabela.appendChild(div);
+    }
+}
+
+historicoEmojis();
 fazerEmojis();
 escreverNome();

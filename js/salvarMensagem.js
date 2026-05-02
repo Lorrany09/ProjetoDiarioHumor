@@ -19,7 +19,7 @@ function salvarHumor(){
         const entradasSalvas = JSON.parse(localStorage.getItem('entradasDiario')) || [];
         entradasSalvas.push(entradaDiario);
         localStorage.setItem('entradasDiario', JSON.stringify(entradasSalvas));
-
+        historicoEmojis();
         document.getElementById("motivo").value = "";
         carregarTodasEntradas();
     } else {
@@ -75,6 +75,7 @@ function apagarEntrada(index) {
         entradas.splice(index, 1);
         localStorage.setItem('entradasDiario', JSON.stringify(entradas));
         carregarTodasEntradas();
+        historicoEmojis();
     }
 }
 
