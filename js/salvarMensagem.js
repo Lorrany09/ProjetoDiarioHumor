@@ -6,6 +6,7 @@ function salvarHumor(){
     const dataAtual = new Date().toLocaleDateString('pt-BR');
     const hoje = new Date();
     const diaAtual = diasSemana[hoje.getDay()];
+    const chave = getChaveUsuario();
 
     if(humorSalvo && input){
         const entradaDiario = {
@@ -16,9 +17,9 @@ function salvarHumor(){
             emoji: humorSalvo.svg
         };
 
-        const entradasSalvas = JSON.parse(localStorage.getItem('entradasDiario')) || [];
+        const entradasSalvas = JSON.parse(localStorage.getItem(chave)) || [];
         entradasSalvas.push(entradaDiario);
-        localStorage.setItem('entradasDiario', JSON.stringify(entradasSalvas));
+        localStorage.setItem(chave, JSON.stringify(entradasSalvas));
         historicoEmojis();
         document.getElementById("motivo").value = "";
         carregarTodasEntradas();
@@ -36,7 +37,8 @@ function salvarHumor(){
 }
 
 function carregarTodasEntradas() {
-    const entradas = JSON.parse(localStorage.getItem('entradasDiario')) || [];
+    const chave = getChaveUsuario();
+    const entradas = JSON.parse(localStorage.getItem(chave)) || [];
     const tabela = document.getElementById("historico");
     tabela.innerHTML = '';
     
@@ -66,19 +68,21 @@ function carregarTodasEntradas() {
 } 
 
 function apagarTudo(){
-    localStorage.removeItem('entradasDiario');
-}
-
-function apagarEntrada(index) {
-    if(confirm('Tem certeza que quer apagar esta mensagem?')) {
-        const entradas = JSON.parse(localStorage.getItem('entradasDiario')) || [];
-        entradas.splice(index, 1);
-        localStorage.setItem('entradasDiario', JSON.stringify(entradas));
+    if(confirm('Tem certeza que quer apagar TODO o histórico?')){
+        const chave = getChaveUsuario();
+        localStorage.removeItem(chave);
         carregarTodasEntradas();
         historicoEmojis();
     }
 }
 
-window.onload = function() {
-    carregarTodasEntradas();
+function apagarEntrada(index) {
+    if(confirm('Tem certeza que quer apagar esta mensagem?')) {
+        const chave = getChaveUsuario();
+        const entradas = JSON.parse(localStorage.getItem(chave)) || [];
+        entradas.splice(index, 1);
+        localStorage.setItem(chave, JSON.stringify(entradas));
+        carregarTodasEntradas();
+        historicoEmojis();
+    }
 }

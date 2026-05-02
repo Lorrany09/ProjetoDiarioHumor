@@ -79,7 +79,7 @@ function fazerEmojis() {
 
 function escreverNome(){
     const linha = document.getElementById("boasVindas");
-    const nomeUsuario = localStorage.getItem('nomeAtual');
+    const nomeUsuario = sessionStorage.getItem('nomeLogado');
     const hora = new Date().getHours();
     let periodo = '';
         
@@ -99,8 +99,9 @@ function escreverNome(){
 }
 
 function historicoEmojis(){
+    const chave = getChaveUsuario();
     const tabela = document.getElementById("historicoHumor");
-    const entradas = JSON.parse(localStorage.getItem('entradasDiario')) || [];
+    const entradas = JSON.parse(localStorage.getItem(chave)) || [];
     const contagem = {};
     
     entradas.forEach(entrada => {
@@ -120,7 +121,3 @@ function historicoEmojis(){
         tabela.appendChild(div);
     }
 }
-
-historicoEmojis();
-fazerEmojis();
-escreverNome();

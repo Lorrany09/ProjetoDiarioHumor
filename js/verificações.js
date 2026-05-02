@@ -1,5 +1,6 @@
 function entrarPagina(){
-    const nome = document.getElementById('nome').value;
+    const nome = document.getElementById('nome').value
+    const nomeSemEspaco = nome.replace(/\s/g, '');
     const input = document.getElementById("nome");
     const mensagem = document.getElementById("mensagemErro");
 
@@ -12,11 +13,16 @@ function entrarPagina(){
         });
         return;
     }
-
-    localStorage.setItem('nomeAtual', nome);
+    sessionStorage.setItem('usuarioLogado', nomeSemEspaco);
+    sessionStorage.setItem('nomeLogado', nome);
     window.location.href = "pages/diario.html";
 }
 
 function sairPagina(){
     window.location.href = "/index.html";
+}
+
+function getChaveUsuario() {
+    const usuario = sessionStorage.getItem('usuarioLogado');
+    return `entradasDiario_${usuario}`;
 }
