@@ -5,14 +5,11 @@
     --fundoMain: #FFFFFF;
     --principal: #ff5848;
     --principalClaro: #FF7B6E;
-    --principalHover: #f9d003;
     --destaque: #FFD166;
     --destaqueClaro: #FFE8B6;
     --realce: #FF9F1C;
     --realceHover: #FFBF69;
     --textoPrincipal: black;
-    --textoSecundario: #6C757D;
-    --borda: #E2A47B;
     --sombra: rgba(0, 0, 0, 0.377);
 }
 
@@ -21,6 +18,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Indie Flower';
+    color: var(--textoPrincipal);
 }
 
 main, body{
@@ -170,10 +168,10 @@ h1{
     font-size: 2.5rem;
 }
 
-#voltar{
+#menu{
     border-radius: 2rem;
     border: none;
-    width: 7rem;
+    width: 4rem;
     height: 3rem;
     font-size: 20px;
     font-weight: bold;
@@ -181,11 +179,89 @@ h1{
     color: var(--textoPrincipal);
     cursor: pointer;
     transition: all 0.3s ease;
-    position: absolute;
-    left: 90%;
+    position: fixed;
+    top: 6rem;
+    right: -28px;
+    padding-right: 70px;
 }
 
-#voltar:hover{
+#menu svg{
+    display: flex;
+    width: 3rem; 
+    height: 2rem;
+}
+
+#menu:hover{
+    background-color: var(--realce);
+    color: white;
+    transform: translateX(-10px);
+}
+
+.teste{
+    position: fixed;
+    right: -90px;
+    top: 80px;
+}
+
+.clicado{
+    background-color: var(--principal);
+    width: 15rem;
+    height: 15rem;
+    position: fixed;
+    z-index: 1;
+    top: 63px;
+    right: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.clicado button{
+    border-radius: 2rem;
+    border: none;
+    width: 8rem;
+    height: 3rem;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--principalClaro);
+    color: var(--textoPrincipal);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clicado button:hover{
+    background-color: var(--realce);
+    color: white;
+    transform: scale(1.05);
+}
+
+.clicado hr{
+    width: 13rem;
+    height: 1px;
+    background-color: var(--textoPrincipal);
+    border: 1px solid var(--textoPrincipal);
+}
+
+.clicado #sair{
+    border-radius: 5px;
+    border: none;
+    width: 2rem;
+    height: 3rem;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--principalClaro);
+    color: var(--textoPrincipal);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    left: 5rem;
+}
+
+.clicado #sair:hover{
     background-color: var(--realce);
     color: white;
     transform: scale(1.05);
@@ -244,17 +320,13 @@ a{
     border: 2px solid red;
     background-color: rgba(255, 0, 0, 0.138);
     border-radius: 2rem;
-    width: 12rem;
-    height: 3rem;
+    width: 20rem;
+    height: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-hr{
-    background-color: black;
-    height: 3px;
-    border-color: black;
+    font-size: 18px;
+    font-weight: bolder;
 }
 
 label{
@@ -303,10 +375,6 @@ label{
     main{
         width: 90%;
         padding: 1.5rem;
-    }
-    #voltar{
-        left: auto;
-        right: 5%;
     }
     h1{
         font-size: 2rem;
@@ -415,6 +483,15 @@ label{
     .historico{
         width: 100%;
     }
+    #menu{
+        z-index: 1;
+        right: -35px;
+    }
+    #menu svg{
+        display: flex;
+        width: 3rem;
+        height: 2rem;
+    }
 }
 
 @media screen and (max-width: 768px){
@@ -431,12 +508,14 @@ label{
         text-align: center;
         padding: 0.5rem;
     }
-    #voltar{
-        position: static;
-        width: 6rem;
-        height: 2.5rem;
-        font-size: 16px;
-        margin-bottom: 0.5rem;
+    #menu{
+        z-index: 1;
+        right: -35px;
+    }
+    #menu svg{
+        display: flex;
+        width: 3rem;
+        height: 2rem;
     }
     main{
         width: 95%;

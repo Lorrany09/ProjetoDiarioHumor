@@ -47,7 +47,6 @@ let humorSelecionado = null;
 
 function fazerEmojis() {
     const tabela = document.getElementById("emojis");
-    const mensagemErro = document.getElementById("erro");
     
     emoji.forEach((item, index) => {
         const botao = document.createElement("div");
@@ -120,4 +119,19 @@ function historicoEmojis(){
         div.classList.add("div");
         tabela.appendChild(div);
     }
+}
+function teste(){
+    const tela = document.getElementById("teste");
+    const botaoEntrar = document.getElementById("menu");
+    const botaoSair = document.getElementById("sair");
+
+    botaoEntrar.addEventListener("click", function(){
+        tela.classList.remove("teste");
+        tela.classList.add("clicado");
+        
+    }); 
+    botaoSair.addEventListener("click", function(){
+        tela.classList.remove("clicado");
+        tela.classList.add("teste");
+    });
 }

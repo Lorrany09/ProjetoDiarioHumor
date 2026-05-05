@@ -16,6 +16,8 @@ Uma aplicação web interativa para registro diário de emoções, permitindo qu
 diario-humor/
 ├── index.html              # Página de login
 ├── diario.html             # Página principal do diário
+├── img/
+│   ├── icone.svg           # Icone da página
 ├── css/
 │   ├── index.css           # Estilos da página de login
 │   └── diario.css          # Estilos da página do diário
